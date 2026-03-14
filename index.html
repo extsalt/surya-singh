@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimize digital experiences & maximize conversions</title>
+    <title>Secure digital experiences & maximize data protection | ASV Security</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -23,6 +23,45 @@
             background-size: 40px 40px;
             background-position: center bottom;
         }
+
+        /* Pure CSS Infinite Marquee */
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-box {
+            overflow: hidden;
+            position: relative;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+        .marquee-box::before,
+        .marquee-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 15vw;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .marquee-box::before {
+            left: 0;
+            background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+        }
+        .marquee-box::after {
+            right: 0;
+            background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+        }
+        .marquee-inner {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 35s linear infinite;
+        }
+        .marquee-inner:hover {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 
@@ -32,21 +71,21 @@
     <header class="w-full relative z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-6">
             <div class="flex items-center gap-12">
-                <!-- VWO Logo substitute (Using an SVG representation or text) -->
-                <a href="/" class="flex items-center">
-                    <svg width="64" height="24" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 5 L20 35 L30 5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M35 5 L45 35 L55 5 L65 35 L75 5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="85" cy="20" r="12" stroke="white" stroke-width="4" />
+                <!-- ASV Security Logo substitute -->
+                <a href="/" class="flex items-center gap-2">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#E5005A]">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
+                    <span class="text-xl font-bold tracking-wide text-white">ASV Security</span>
                 </a>
                 <nav class="hidden lg:flex gap-6 text-[15px] font-semibold text-gray-100 mt-1 cursor-pointer">
                     <span class="hover:text-pink-400 transition">Capabilities</span>
                     <span class="hover:text-pink-400 transition">Pricing</span>
                     <span class="hover:text-pink-400 transition">Solutions</span>
-                    <span class="hover:text-pink-400 transition">Why VWO?</span>
+                    <a href="#why-choose-us" class="hover:text-pink-400 transition">Why ASV Security?</a>
                     <span class="hover:text-pink-400 transition">Resources</span>
                     <span class="hover:text-pink-400 transition">Partners</span>
+                    <a href="#legal-compliance" class="hover:text-pink-400 transition">Legal & Compliance</a>
                 </nav>
             </div>
             <div class="hidden md:flex items-center gap-6 text-[15px] font-semibold text-gray-100 mt-1 cursor-pointer">
@@ -61,6 +100,41 @@
                     <span>EN</span>
                 </div>
             </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center p-2 text-white hover:text-pink-400 transition ml-auto md:ml-6">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#201140] border-t border-white/10 shadow-lg lg:hidden">
+            <div class="flex flex-col px-6 py-4 gap-4 text-[15px] font-semibold text-gray-100">
+                <a href="#" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Capabilities</a>
+                <a href="#" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Pricing</a>
+                <a href="#" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Solutions</a>
+                <a href="#why-choose-us" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Why ASV Security?</a>
+                <a href="#" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Resources</a>
+                <a href="#" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Partners</a>
+                <a href="#legal-compliance" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Legal & Compliance</a>
+                
+                <div class="flex flex-col md:hidden gap-4 mt-2">
+                    <a href="#" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Contact</a>
+                    <a href="#" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Login</a>
+                    <div class="flex items-center gap-1 hover:text-pink-400 transition py-2 cursor-pointer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span>EN</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -68,13 +142,13 @@
     <main class="flex-grow flex flex-col items-center justify-start pt-16 md:pt-24 px-4 text-center relative z-10 w-full mb-20">
         
         <h1 class="text-4xl md:text-[3.5rem] font-extrabold leading-[1.15] mb-6 max-w-4xl tracking-tight text-white drop-shadow-lg">
-            Optimize digital experiences & <br class="hidden sm:block"/> maximize conversions
+            Secure digital experiences & <br class="hidden sm:block"/> maximize data protection
         </h1>
         
         <p class="text-base md:text-lg text-gray-200 mb-10 max-w-[54rem] leading-relaxed mx-auto font-medium opacity-90">
-            Your customer is evolving every day. Decode their evolving behaviors, fine tune with robust A/B testing,<br class="hidden lg:block"/> 
-            and personalize experiences that hit home. Boost conversions across your websites and mobile apps<br class="hidden lg:block"/> 
-            through data-driven UI and server-side enhancements.
+            Cyber threats are evolving every day. Defend your infrastructure with robust threat detection,<br class="hidden lg:block"/> 
+            and implement security measures that hit home. Protect your crucial assets across clouds and mobile apps<br class="hidden lg:block"/> 
+            through AI-driven monitoring and enterprise-level enhancements.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto justify-center">
@@ -91,13 +165,444 @@
     <!-- HERO ILLUSTRATION -->
     <div class="relative w-full flex justify-center mt-auto pb-12 z-10 px-4">
         <div class="max-w-6xl w-full flex justify-center relative">
-            <img src="assets/images/ab-testing-hero.png" alt="A/B Testing Illustration" class="w-full md:w-[90%] lg:w-[80%] max-w-screen-lg object-contain drop-shadow-2xl rounded-xl border border-white/5 bg-black/20" />
+            <img src="assets/images/asv-security-hero.png" alt="Cybersecurity Dashboard Illustration" class="w-full md:w-[90%] lg:w-[80%] max-w-screen-lg object-contain drop-shadow-2xl rounded-xl border border-white/5 bg-black/20" />
             
             <!-- Optional subtle glow effect behind the image to match the premium dark theme -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#ec006c]/20 blur-[100px] -z-10 rounded-full pointer-events-none"></div>
         </div>
     </div>
 
+    <!-- LOGO CAROUSEL SECTION -->
+    <section class="w-full bg-[#ffffff] py-16 relative z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+        <div class="max-w-7xl mx-auto px-4 text-center mb-10">
+            <h2 class="text-[#101828] font-bold text-[16px] md:text-[18px]">
+                Thousands of businesses use ASV Security to analyze, optimize, and personalize their websites, apps, and features.
+            </h2>
+        </div>
+        
+        <div class="marquee-box max-w-[100vw] py-4">
+            <div class="marquee-inner">
+                <!-- Group 1 -->
+                <div class="flex shrink-0 gap-5 items-center pr-5">
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-2xl font-bold text-[#E5005A]">nacap</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-black italic tracking-tighter text-[#1C3E7B]">INNOVA<span class="text-[#E7222E]">SPORT</span></span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold tracking-tight text-gray-800">iPROSPECT</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold text-gray-700">iSpot<span class="text-[#8CC63F]">.tv</span></span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold text-[#00A88E]">kaspersky</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold text-[#6D42A2]">konfio</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-2xl font-[cursive] text-gray-800">Leonisa</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-semibold text-blue-500">Bank</span>
+                    </div>
+                </div>
+
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="flex shrink-0 gap-5 items-center pr-5">
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-2xl font-bold text-[#E5005A]">nacap</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-black italic tracking-tighter text-[#1C3E7B]">INNOVA<span class="text-[#E7222E]">SPORT</span></span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold tracking-tight text-gray-800">iPROSPECT</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold text-gray-700">iSpot<span class="text-[#8CC63F]">.tv</span></span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold text-[#00A88E]">kaspersky</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-bold text-[#6D42A2]">konfio</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-2xl font-[cursive] text-gray-800">Leonisa</span>
+                    </div>
+                    <div class="flex items-center justify-center w-48 h-20 bg-white border border-gray-100 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0 px-6">
+                        <span class="text-xl font-semibold text-blue-500">Bank</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGAL & COMPLIANCE SECTION -->
+    <section id="legal-compliance" class="w-full bg-[#ffffff] py-20 relative z-20 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="relative w-full rounded-3xl bg-gradient-to-br from-[#201140] to-[#120926] p-[1px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] overflow-hidden">
+                <!-- Inner Container -->
+                <div class="relative bg-white h-full w-full rounded-3xl p-8 md:p-14 overflow-hidden">
+                    <!-- Decorative Background Gradients -->
+                    <div class="absolute -top-[50%] -right-[10%] w-[70%] h-[150%] bg-gradient-to-b from-[#E5005A]/10 to-transparent blur-[80px] rounded-full pointer-events-none -z-0"></div>
+                    <div class="absolute -bottom-[50%] -left-[10%] w-[60%] h-[100%] bg-gradient-to-t from-[#201140]/5 to-transparent blur-[60px] rounded-full pointer-events-none -z-0"></div>
+                    
+                    <div class="relative z-10 flex flex-col lg:flex-row gap-12 items-start justify-between">
+                        <div class="flex flex-col lg:w-[35%]">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 border border-pink-100 w-fit mb-6">
+                                <span class="w-2 h-2 rounded-full bg-[#E5005A] animate-pulse"></span>
+                                <span class="text-xs font-bold text-[#E5005A] uppercase tracking-wider">Official Details</span>
+                            </div>
+                            <h2 class="text-[#0e1726] font-extrabold text-3xl md:text-4xl tracking-tight leading-tight mb-4">
+                                <span class="text-[#E5005A]">5.</span> Legal &<br/>Compliance
+                            </h2>
+                            <p class="text-gray-500 text-sm font-medium leading-relaxed">
+                                Transparent and fully compliant operations backed by government registration and international ISO certifications.
+                            </p>
+                        </div>
+
+                        <div class="lg:w-[65%] grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+                            <!-- Detail Card 1 -->
+                            <div class="bg-white/70 backdrop-blur-md border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-pink-100 transition-all duration-300 group relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-pink-50 to-transparent rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+                                <div class="w-10 h-10 rounded-lg bg-[#201140]/5 flex items-center justify-center mb-4 group-hover:bg-[#E5005A]/10 transition">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-[#201140] group-hover:text-[#E5005A] transition" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>
+                                </div>
+                                <span class="text-[11px] font-extrabold text-[#E5005A]/80 uppercase tracking-widest mb-1 block">Company Name</span>
+                                <span class="text-[17px] font-bold text-[#101828] leading-snug block">ASV Security Services Pvt. Ltd.</span>
+                            </div>
+
+                            <!-- Detail Card 2 -->
+                            <div class="bg-white/70 backdrop-blur-md border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-pink-100 transition-all duration-300 group relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+                                <div class="w-10 h-10 rounded-lg bg-[#201140]/5 flex items-center justify-center mb-4 group-hover:bg-[#E5005A]/10 transition">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-[#201140] group-hover:text-[#E5005A] transition" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-[11px] font-extrabold text-[#E5005A]/80 uppercase tracking-widest mb-1 block">Company Status</span>
+                                <span class="text-[15px] font-bold text-[#101828] leading-tight block">Govt. Registered & ISO Certified Company.</span>
+                            </div>
+
+                            <!-- Detail Card 3 -->
+                            <div class="bg-white/70 backdrop-blur-md border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-pink-100 transition-all duration-300 group relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-purple-50 to-transparent rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+                                <div class="w-10 h-10 rounded-lg bg-[#201140]/5 flex items-center justify-center mb-4 group-hover:bg-[#E5005A]/10 transition">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-[#201140] group-hover:text-[#E5005A] transition" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 8l4 4-4 4"></path>
+                                        <path d="M8 12h8"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-[11px] font-extrabold text-[#E5005A]/80 uppercase tracking-widest mb-2 block">Corporate ID (CIN)</span>
+                                <span class="text-[15px] font-mono font-bold text-[#201140] bg-[#201140]/5 py-1.5 px-3 rounded-md inline-block shadow-sm">U80100UP2023PTC189953</span>
+                            </div>
+
+                            <!-- Detail Card 4 -->
+                            <div class="bg-white/70 backdrop-blur-md border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-pink-100 transition-all duration-300 group relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-pink-50 to-transparent rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-10 h-10 rounded-lg bg-[#201140]/5 flex items-center justify-center group-hover:bg-[#E5005A]/10 transition">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-[#201140] group-hover:text-[#E5005A] transition" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-extrabold text-[#E5005A]/80 uppercase tracking-widest mb-2 block">Tax ID (PAN)</span>
+                                <span class="text-[15px] font-mono font-bold text-[#E5005A] bg-[#E5005A]/5 py-1.5 px-3 rounded-md inline-block shadow-sm">AAZCA4589J</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE ASV SECTION -->
+    <section id="why-choose-us" class="w-full bg-[#1A0E35] border-t border-b border-white/5 py-24 relative z-20 overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-[#E5005A]/10 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[0%] -right-[10%] w-[40%] h-[40%] bg-[#6D42A2]/20 blur-[100px] rounded-full"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 md:mb-20">
+                <span class="text-[#E5005A] font-bold tracking-wider uppercase text-sm mb-3 block">Our Advantages</span>
+                <h2 class="text-3xl md:text-[2.75rem] font-extrabold text-white mb-6 leading-tight">WHY CHOOSE ASV?</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg md:text-xl font-medium opacity-90">We deliver unparalleled security solutions with a commitment to safety, integrity, and excellence.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white/[0.03] backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-2xl hover:-translate-y-2 transition-all duration-300 group hover:bg-white/[0.05] hover:border-white/20 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-[#E5005A]/10 rounded-full blur-xl group-hover:bg-[#E5005A]/20 transition-all duration-300"></div>
+                    <div class="w-14 h-14 bg-[#E5005A]/10 rounded-xl flex items-center justify-center mb-6 text-[#E5005A] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 leading-tight relative z-10">Police Verified Staff</h3>
+                    <p class="text-gray-300 text-[15px] leading-relaxed relative z-10">
+                        Every team member undergoes a rigorous police verification process.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white/[0.03] backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-2xl hover:-translate-y-2 transition-all duration-300 group hover:bg-white/[0.05] hover:border-white/20 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-[#00A88E]/10 rounded-full blur-xl group-hover:bg-[#00A88E]/20 transition-all duration-300"></div>
+                    <div class="w-14 h-14 bg-[#00A88E]/10 rounded-xl flex items-center justify-center mb-6 text-[#00A88E] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 leading-tight relative z-10">24/7 Vigilance</h3>
+                    <p class="text-gray-300 text-[15px] leading-relaxed relative z-10">
+                        Dedicated supervisors and a Quick Response Team (QRT) for emergencies.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white/[0.03] backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-2xl hover:-translate-y-2 transition-all duration-300 group hover:bg-white/[0.05] hover:border-white/20 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-[#F5A623]/10 rounded-full blur-xl group-hover:bg-[#F5A623]/20 transition-all duration-300"></div>
+                    <div class="w-14 h-14 bg-[#F5A623]/10 rounded-xl flex items-center justify-center mb-6 text-[#F5A623] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <polyline points="16 11 18 13 22 9"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 leading-tight relative z-10">Trained & Disciplined</h3>
+                    <p class="text-gray-300 text-[15px] leading-relaxed relative z-10">
+                        Our staff is trained in fire safety, first aid, and corporate etiquette.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white/[0.03] backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-2xl hover:-translate-y-2 transition-all duration-300 group hover:bg-white/[0.05] hover:border-white/20 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-[#3B82F6]/10 rounded-full blur-xl group-hover:bg-[#3B82F6]/20 transition-all duration-300"></div>
+                    <div class="w-14 h-14 bg-[#3B82F6]/10 rounded-xl flex items-center justify-center mb-6 text-[#3B82F6] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="21" x2="4" y2="14"/>
+                            <line x1="4" y1="10" x2="4" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12" y2="3"/>
+                            <line x1="20" y1="21" x2="20" y2="16"/>
+                            <line x1="20" y1="12" x2="20" y2="3"/>
+                            <line x1="1" y1="14" x2="7" y2="14"/>
+                            <line x1="9" y1="8" x2="15" y2="8"/>
+                            <line x1="17" y1="16" x2="23" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 leading-tight relative z-10">Tailored Solutions</h3>
+                    <p class="text-gray-300 text-[15px] leading-relaxed relative z-10">
+                        Customized security plans designed to fit your specific budget and needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#fcfcfc] text-[#333333] w-full relative z-20 mt-12">
+        <div class="max-w-[85rem] mx-auto px-6 py-16">
+            
+            <!-- POPULAR IN-DEPTH GUIDES -->
+            <div class="flex flex-col md:flex-row gap-8 mb-12 border-b border-gray-200 pb-12">
+                <div class="md:w-[22%]">
+                    <h2 class="text-[#0e1726] font-extrabold text-[1.4rem] tracking-wide uppercase leading-tight">Popular<br/>In-depth<br/>Guides</h2>
+                </div>
+                <div class="md:w-[78%] grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-8 text-[13px] text-gray-500 font-medium">
+                    <div class="flex flex-col gap-3.5">
+                        <a href="#" class="hover:text-blue-600 transition">A/B Testing</a>
+                        <a href="#" class="hover:text-blue-600 transition">Cart Abandonment</a>
+                        <a href="#" class="hover:text-blue-600 transition">Conversion Rate Optimization</a>
+                        <a href="#" class="hover:text-blue-600 transition">Customer Data Platform</a>
+                        <a href="#" class="hover:text-blue-600 transition">Customer Engagement</a>
+                        <a href="#" class="hover:text-blue-600 transition">Customer Experience Optimization</a>
+                    </div>
+                    <div class="flex flex-col gap-3.5">
+                        <a href="#" class="hover:text-blue-600 transition">Customer Retention</a>
+                        <a href="#" class="hover:text-blue-600 transition">Feature Rollout</a>
+                        <a href="#" class="hover:text-blue-600 transition">Grow Website Traffic</a>
+                        <a href="#" class="hover:text-blue-600 transition">Landing Page Optimization</a>
+                        <a href="#" class="hover:text-blue-600 transition">Mobile App A/B Testing</a>
+                        <a href="#" class="hover:text-blue-600 transition">Multivariate Testing</a>
+                    </div>
+                    <div class="flex flex-col gap-3.5">
+                        <a href="#" class="hover:text-blue-600 transition">Push Notifications</a>
+                        <a href="#" class="hover:text-blue-600 transition">Server-Side Testing</a>
+                        <a href="#" class="hover:text-blue-600 transition">Session Recording</a>
+                        <a href="#" class="hover:text-blue-600 transition">Usability Testing</a>
+                        <a href="#" class="hover:text-blue-600 transition">Visitor Behavior Analysis</a>
+                        <a href="#" class="hover:text-blue-600 transition">Web Form Analytics</a>
+                    </div>
+                    <div class="flex flex-col gap-3.5">
+                        <a href="#" class="hover:text-blue-600 transition">Website Heatmaps</a>
+                        <a href="#" class="hover:text-blue-600 transition">Website Optimization</a>
+                        <a href="#" class="hover:text-blue-600 transition">Website Personalization</a>
+                        <a href="#" class="hover:text-blue-600 transition">Website Redesign</a>
+                        <a href="#" class="hover:text-blue-600 transition">Website Surveys</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN LINKS -->
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-8 mb-14 text-[13px] font-medium border-b border-gray-200 pb-14">
+                <!-- PRODUCTS -->
+                <div class="flex flex-col gap-3.5">
+                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Products</h3>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security Testing</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security Insights</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security Data360</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security Personalize</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security Plan</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security Web Rollouts</a>
+                </div>
+
+                <!-- COMPARE -->
+                <div class="flex flex-col gap-3.5">
+                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Compare</h3>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security vs. Optimizely</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security vs. Google Optimize</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Google Optimize vs. Optimizely</a>
+                    <a href="#" class="text-gray-800 font-semibold hover:text-blue-600 transition underline decoration-gray-300 underline-offset-4">Google Optimize 360 vs. Optimizely</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Adobe Target vs. Google Optimize</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Google Optimize vs. Optimize 360</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Optimizely vs. Kameleoon</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Kameleoon vs. AB Tasty</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Kameleoon vs. Optimize 360</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">AB Tasty vs. Optimize 360</a>
+                </div>
+
+                <!-- RESOURCES -->
+                <div class="flex flex-col gap-3.5">
+                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Resources</h3>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Blog</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Product Updates</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Success Stories</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">eBooks</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Webinars</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Events</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Glossary</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Inside ASV Security</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Masters of Conversion</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Popular In-Depth Guides</a>
+                </div>
+
+                <!-- CONTACT US -->
+                <div class="flex flex-col gap-3.5">
+                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Contact Us</h3>
+                    <span class="text-gray-500 leading-normal">Registered Office: 301, Mohan Apartment, Semra, Matiyari, Lucknow – 226028.</span>
+                    <span class="text-gray-500">Phone: <a href="tel:+919415050243" class="hover:text-blue-600 transition">+91-9415050243</a></span>
+                    <span class="text-gray-500">Email: <a href="mailto:info@asvservices.in" class="hover:text-blue-600 transition">info@asvservices.in</a></span>
+                    <span class="text-gray-500">Website: <a href="https://www.asvservices.in" class="hover:text-blue-600 transition" target="_blank">www.asvservices.in</a></span>
+                </div>
+
+                <!-- FREE TOOLS -->
+                <div class="flex flex-col gap-3.5 mt-8 md:mt-0">
+                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Free Tools</h3>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">A/B Test Significance Calculator</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">A/B Test Sample Size Calculator</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">A/B Test Duration Calculator</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Web Push ROI Calculator</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Cart Abandonment Calculator</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Landing Page Analyzer</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">AI-Powered Heatmap Generator</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">CRO Experimentation Checklist</a>
+                </div>
+
+                <!-- ABOUT US -->
+                <div class="flex flex-col gap-3.5 mt-8 md:mt-0">
+                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">About Us</h3>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Our Company</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Careers</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Media Kit</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">ASV Security Partners</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Affiliate Program</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Newsroom</a>
+                </div>
+            </div>
+
+            <!-- CERTIFICATIONS -->
+            <div class="flex flex-wrap items-center gap-6 md:gap-10 mb-8 text-gray-400 border-b border-gray-200 pb-8">
+                <div class="flex items-center gap-2">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-300"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                    <span class="text-[10px] sm:text-[11px] font-bold leading-tight tracking-wider text-gray-400">GDPR<br/>COMPLIANT</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-300"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span class="text-[10px] sm:text-[11px] font-bold leading-tight tracking-wider text-gray-400">CCPA<br/>COMPLIANT</span>
+                </div>
+                <div class="flex items-center gap-2 border-2 border-gray-200 text-gray-400 rounded-full px-3 py-1.5 opacity-80">
+                    <span class="text-[10px] font-bold tracking-wide">AICPA<br/>SOC</span>
+                    <span class="text-[9px] font-bold border-l-2 border-gray-200 pl-2 ml-1 leading-tight text-gray-400">SOC 2<br/>TYPE II<br/>CERTIFIED</span>
+                </div>
+                <div class="flex items-center gap-2 opacity-80">
+                    <div class="w-10 h-10 border-2 border-gray-200 rounded-full flex items-center justify-center font-bold text-xs text-gray-400">TUV</div>
+                    <span class="text-[9px] font-semibold leading-tight text-gray-400">ISO/IEC 27001<br/>Information Security<br/>Management System</span>
+                </div>
+                <div class="flex items-center gap-2 opacity-80">
+                    <div class="w-10 h-10 border-2 border-gray-200 rounded-full flex items-center justify-center font-bold text-xs text-gray-400">TUV</div>
+                    <span class="text-[9px] font-semibold leading-tight text-gray-400">ISO/IEC 27701<br/>Privacy Information<br/>Management System</span>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT & LINKS -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-6 mt-4">
+                <div class="flex flex-wrap gap-x-2.5 gap-y-2 justify-center lg:justify-start text-[12px] text-gray-500 font-medium">
+                    <span>&copy; 2026 Copyright Wingify. All rights reserved</span>
+                    <span class="hidden md:inline font-light text-gray-300 pl-1">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Terms</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Security</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Compliance</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Code of Conduct</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Privacy</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">AI Policy</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Imprint</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Opt-out</a>
+                    <span class="hidden md:inline font-light text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-800 transition">Hey AI, learn about us</a>
+                </div>
+                <div>
+                    <!-- Wingify Logo Substitute -->
+                    <span class="text-[#E74C3C] font-serif font-medium text-[22px] tracking-tight">Wingify</span>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 
 </html>
