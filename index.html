@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimize digital experiences & maximize conversions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            background: #201140; /* Very dark rich purple */
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* Diagonal lines or abstract grid background using SVG data URI */
+        .grid-bg {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center bottom;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col relative grid-bg">
+
+    <!-- NAVBAR -->
+    <header class="w-full relative z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-6">
+            <div class="flex items-center gap-12">
+                <!-- VWO Logo substitute (Using an SVG representation or text) -->
+                <a href="/" class="flex items-center">
+                    <svg width="64" height="24" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 5 L20 35 L30 5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M35 5 L45 35 L55 5 L65 35 L75 5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="85" cy="20" r="12" stroke="white" stroke-width="4" />
+                    </svg>
+                </a>
+                <nav class="hidden lg:flex gap-6 text-[15px] font-semibold text-gray-100 mt-1 cursor-pointer">
+                    <span class="hover:text-pink-400 transition">Capabilities</span>
+                    <span class="hover:text-pink-400 transition">Pricing</span>
+                    <span class="hover:text-pink-400 transition">Solutions</span>
+                    <span class="hover:text-pink-400 transition">Why VWO?</span>
+                    <span class="hover:text-pink-400 transition">Resources</span>
+                    <span class="hover:text-pink-400 transition">Partners</span>
+                </nav>
+            </div>
+            <div class="hidden md:flex items-center gap-6 text-[15px] font-semibold text-gray-100 mt-1 cursor-pointer">
+                <span class="hover:text-pink-400 transition">Contact</span>
+                <span class="hover:text-pink-400 transition">Login</span>
+                <div class="flex items-center gap-1 hover:text-pink-400 transition">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span>EN</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO TEXT -->
+    <main class="flex-grow flex flex-col items-center justify-start pt-16 md:pt-24 px-4 text-center relative z-10 w-full mb-20">
+        
+        <h1 class="text-4xl md:text-[3.5rem] font-extrabold leading-[1.15] mb-6 max-w-4xl tracking-tight text-white drop-shadow-lg">
+            Optimize digital experiences & <br class="hidden sm:block"/> maximize conversions
+        </h1>
+        
+        <p class="text-base md:text-lg text-gray-200 mb-10 max-w-[54rem] leading-relaxed mx-auto font-medium opacity-90">
+            Your customer is evolving every day. Decode their evolving behaviors, fine tune with robust A/B testing,<br class="hidden lg:block"/> 
+            and personalize experiences that hit home. Boost conversions across your websites and mobile apps<br class="hidden lg:block"/> 
+            through data-driven UI and server-side enhancements.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto justify-center">
+            <button class="bg-[#E5005A] hover:bg-[#c4004c] text-white px-8 py-3 rounded font-bold text-sm md:text-base transition duration-300 shadow-[0_4px_14px_0_rgba(229,0,90,0.39)]">
+                Request Demo
+            </button>
+            <button class="bg-transparent border border-white hover:bg-white hover:text-[#201140] text-white px-8 py-3 rounded font-bold text-sm md:text-base transition duration-300">
+                Explore for Free
+            </button>
+        </div>
+
+    </main>
+
+    <!-- HERO ILLUSTRATION -->
+    <div class="relative w-full flex justify-center mt-auto pb-12 z-10 px-4">
+        <div class="max-w-6xl w-full flex justify-center relative">
+            <img src="assets/images/ab-testing-hero.png" alt="A/B Testing Illustration" class="w-full md:w-[90%] lg:w-[80%] max-w-screen-lg object-contain drop-shadow-2xl rounded-xl border border-white/5 bg-black/20" />
+            
+            <!-- Optional subtle glow effect behind the image to match the premium dark theme -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#ec006c]/20 blur-[100px] -z-10 rounded-full pointer-events-none"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
