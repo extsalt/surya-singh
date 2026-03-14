@@ -128,14 +128,16 @@
         <div id="mobile-menu"
             class="hidden absolute top-full left-0 w-full bg-[#201140] border-t border-white/10 shadow-lg lg:hidden">
             <div class="flex flex-col px-6 py-4 gap-4 text-[15px] font-semibold text-gray-100">
-                <a href="#about-us" class="hover:text-pink-400 transition block py-2 border-b border-white/5">About Us</a>
+                <a href="#about-us" class="hover:text-pink-400 transition block py-2 border-b border-white/5">About
+                    Us</a>
                 <a href="#why-choose-us" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Why
                     ASV Security?</a>
                 <a href="#legal-compliance"
                     class="hover:text-pink-400 transition block py-2 border-b border-white/5">Legal & Compliance</a>
 
                 <div class="flex flex-col md:hidden gap-4 mt-2">
-                    <a href="#contact" class="hover:text-pink-400 transition block py-2 border-b border-white/5">Contact</a>
+                    <a href="#contact"
+                        class="hover:text-pink-400 transition block py-2 border-b border-white/5">Contact</a>
                     <div class="flex items-center gap-1 hover:text-pink-400 transition py-2 cursor-pointer">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -179,18 +181,14 @@
                 class="flex items-center justify-center bg-[#E5005A] hover:bg-[#c4004c] text-white px-8 py-3 rounded font-bold text-sm md:text-base transition duration-300 shadow-[0_4px_14px_0_rgba(229,0,90,0.39)]">
                 Get a Free Consultation
             </a>
-            <a href="#contact"
-                class="flex items-center justify-center bg-transparent border border-white hover:bg-white hover:text-[#201140] text-white px-8 py-3 rounded font-bold text-sm md:text-base transition duration-300">
-                Contact Us
-            </a>
         </div>
 
     </main>
 
     <!-- HERO ILLUSTRATION -->
-    <div class="relative w-full flex justify-center mt-auto pb-12 z-10 px-4">
+    <div class="relative w-full flex justify-center mt-auto pb-12 z-10 px-4 hidden">
         <div class="max-w-6xl w-full flex justify-center relative">
-            <img src="assets/images/asv-security-hero.png" alt="Cybersecurity Dashboard Illustration"
+            <img src="assets/images/asv-security-hero.jpg" alt="Cybersecurity Dashboard Illustration"
                 class="w-full md:w-[90%] lg:w-[80%] max-w-screen-lg object-contain drop-shadow-2xl rounded-xl border border-white/5 bg-black/20" />
 
             <!-- Optional subtle glow effect behind the image to match the premium dark theme -->
@@ -430,12 +428,17 @@
         <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
             <span class="text-[#E5005A] font-bold tracking-wider uppercase text-sm mb-3 block">Who We Are</span>
             <h2 class="text-3xl md:text-[2.75rem] font-extrabold text-[#101828] mb-8 leading-tight">About Us</h2>
-            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium mx-auto max-w-5xl">
-                ASV Security Services Pvt. Ltd. is a premier, government-registered security agency incorporated under
-                the Companies Act, 2013 (CIN: U80100UP2023PTC189953). Based in Lucknow, we provide end-to-end security
-                and facility solutions to corporate, industrial, and residential sectors. Our mission is to ensure peace
-                of mind through disciplined personnel, advanced technology, and unwavering integrity.
-            </p>
+            <div class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium mx-auto max-w-5xl space-y-6">
+                <p>
+                    <strong class="text-[#101828]">ASV Security Services Pvt. Ltd.</strong> is a premier, government-registered security agency incorporated under the Companies Act, 2013 (CIN: U80100UP2023PTC189953).
+                </p>
+                <p>
+                    Based in Lucknow, we provide end-to-end security and facility solutions to corporate, industrial, and residential sectors.
+                </p>
+                <p>
+                    Our mission is to ensure peace of mind through disciplined personnel, advanced technology, and unwavering integrity.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -684,32 +687,15 @@
         <div class="max-w-[85rem] mx-auto px-6 py-16">
 
             <!-- MAIN LINKS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14 text-[13px] font-medium border-b border-gray-200 pb-14">
-                <!-- ABOUT US -->
-                <div class="flex flex-col gap-3.5 mt-8 md:mt-0">
-                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">About Us</h3>
-                    <a href="#about-us" class="text-gray-500 hover:text-blue-600 transition">Our Company</a>
-                    <a href="#why-choose-us" class="text-gray-500 hover:text-blue-600 transition">Why Choose Us</a>
-                    <a href="#legal-compliance" class="text-gray-500 hover:text-blue-600 transition">Legal & Compliance</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Careers</a>
-                </div>
-
-                <!-- SERVICES -->
-                <div class="flex flex-col gap-3.5 mt-8 md:mt-0">
-                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Services</h3>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Executive Guarding</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Facility Management</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Manpower Solutions</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Smart Security</a>
-                </div>
-
-                <!-- RESOURCES -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14 text-[13px] font-medium border-b border-gray-200 pb-14">
+                <!-- EXPLORE -->
                 <div class="flex flex-col gap-3.5">
-                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Resources</h3>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Blog</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Newsroom</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Testimonials</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 transition">Gallery</a>
+                    <h3 class="text-[#0e1726] font-bold uppercase tracking-wider mb-2 text-[13px]">Explore</h3>
+                    <a href="#about-us" class="text-gray-500 hover:text-blue-600 transition">About Us</a>
+                    <a href="#why-choose-us" class="text-gray-500 hover:text-blue-600 transition">Why Choose Us</a>
+                    <a href="#legal-compliance" class="text-gray-500 hover:text-blue-600 transition">Legal &
+                        Compliance</a>
                 </div>
 
                 <!-- CONTACT US -->
@@ -775,9 +761,9 @@
                     class="flex flex-wrap gap-x-2.5 gap-y-2 justify-center lg:justify-start text-[12px] text-gray-500 font-medium">
                     <span>&copy; 2026 Copyright AVS Security. All rights reserved</span>
                     <span class="hidden md:inline font-light text-gray-300 pl-1">|</span>
-                    <a href="#" class="hover:text-gray-800 transition">Terms of Service</a>
+                    <a href="#legal-compliance" class="hover:text-gray-800 transition">Terms of Service</a>
                     <span class="hidden md:inline font-light text-gray-300">|</span>
-                    <a href="#" class="hover:text-gray-800 transition">Privacy Policy</a>
+                    <a href="#legal-compliance" class="hover:text-gray-800 transition">Privacy Policy</a>
                 </div>
                 <div>
                     <!-- AVS Security Logo Substitute -->
